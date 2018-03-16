@@ -1,0 +1,12 @@
+{
+  "react/css/application.css": "/webpack/react/css/application-2b0e673f19eeeaf70b2ef607b800db21.css",
+  "react/css/application.css.map": "/webpack/react/css/application-2b0e673f19eeeaf70b2ef607b800db21.css.map",
+  "react/css/application.js": "/webpack/react/css/application-67d379d090023ac5fc17.js",
+  "react/css/application.js.map": "/webpack/react/css/application-67d379d090023ac5fc17.js.map",
+  "react/js/application.js": "/webpack/react/js/application-3afbb416f015b39f2740.js",
+  "react/js/application.js.map": "/webpack/react/js/application-3afbb416f015b39f2740.js.map",
+  "react/js/components/hello_react.js": "/webpack/react/js/components/hello_react-cddba3a449a41e1fbf8a.js",
+  "react/js/components/hello_react.js.map": "/webpack/react/js/components/hello_react-cddba3a449a41e1fbf8a.js.map",
+  "react/js/components/todos/index.js": "/webpack/react/js/components/todos/index-1ebd2aabc3d6495a5523.js",
+  "react/js/components/todos/index.js.map": "/webpack/react/js/components/todos/index-1ebd2aabc3d6495a5523.js.map"
+}

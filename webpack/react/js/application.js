@@ -15,18 +15,32 @@ console.log('Hello World from Webpacker')
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import {
+  Route,
+  NavLink,
+  HashRouter
+} from "react-router-dom";
 
 import TodosIndex from './components/todos/index'
+import TodoNew from './components/todos/new'
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Sample app</h1>
-        <a href="/todos">Todos</a>
-      </div>
+      <HashRouter>
+        <div>
+          <h1>Simple SPA</h1>
+          <ul className="header">
+            <li><NavLink to="/todos">Todos</NavLink></li>
+          </ul>
+          <div className="content">
+            <Route path="/todos" component={TodosIndex}/>
+            <Route path="/todos/new" component={TodoNew}/>
+          </div>
+        </div>
+      </HashRouter>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('react_root'));
+ReactDOM.render(<App />, document.getElementById('root'));

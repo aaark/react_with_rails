@@ -16,10 +16,4 @@ class TodoNew extends React.Component {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-
-   ReactDOM.render(
-    <TodoNew />,
-    document.getElementById('react_root'),
-  )
-})
+export default TodoNew;

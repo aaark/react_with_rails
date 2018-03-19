@@ -1,17 +1,30 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import Request from 'superagent';
+import {
+  Route,
+  NavLink,
+  HashRouter
+} from "react-router-dom";
 
 class TodosIndex extends React.Component {
 
   constructor (props) {
-    super(props)
-    this.state = {
-      todos: this.props.todos
-    }
-    console.log(this.state)
+    super(props);
+    this.state = {};
+    console.log(this.state);
   }
+
+  componentWillMount () {
+    var url = '/todos.json';
+    let currentComponent = this;
+    Request.get(url).then((response) => {
+      currentComponent.setState({todos: response.body})
+    });
+  }
+
 
   render() {
     return (
@@ -22,18 +35,11 @@ class TodosIndex extends React.Component {
           <TableHeaderColumn dataField='title' dataAlign="center" dataSort={true}>Todo title</TableHeaderColumn>
           <TableHeaderColumn dataField='time' dataAlign="center" dataSort={true}>todo time</TableHeaderColumn>
         </BootstrapTable>
-        <a href = '/todos/new'> New Todo </a>
+        <li><NavLink to="/todos/new">New</NavLink></li>
       </div>
     );
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const node = document.getElementById('todos_data')
-  const data = JSON.parse(node.getAttribute('data'))
 
-  ReactDOM.render(
-    <TodosIndex todos={data} />,
-    document.body.appendChild(document.createElement('div')),
-  )
-})
+export default TodosIndex;
